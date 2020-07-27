@@ -1,0 +1,27 @@
+body {background-color: coral;
+}
+
+#introduction { text-align: center;
+background-color: white;
+height: : 300px;
+width:500px;
+margin: auto;
+font-family: Geneva, sans-serif;
+font: Verdana
+font-size: 14pt;
+ }
+
+#mapid { height: 180px; }
+
+ #webmapintro {
+background-color: white;
+height: : 300px;
+width:500px;
+margin: auto;
+font-family: Geneva, sans-serif;
+font: Verdana
+font-style: italic;
+font-size: 10pt;
+}
+
+
