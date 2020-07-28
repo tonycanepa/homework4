@@ -32,6 +32,10 @@
 <p>This map was created to help a friend looking for apartments in the city know where our friends are located.</p>
 </div>
 
+<div class="webmapintro">
+	<p> Below is the Leaflet Map created by Tony Canepa for Homework 4 which identifies where people live in Chicago. </p>
+</div>
+
  <div id="map">
  </div>
 
@@ -56,16 +60,16 @@ var Stamen_TonerLite = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/to
 
 //features
 
-var marker = L.marker([41.92979, -87.64354]).addTo(map)
-var marker = L.marker([41.94091, -87.64342]).addTo(map)
-var marker = L.marker([41.94911, -87.66197]).addTo(map)
-var marker = L.marker([41.94286, -87.66339]).addTo(map)
-var marker = L.marker([41.94103, -87.6551]).addTo(map)
+var marker = L.marker([41.92979, -87.64354]).addTo(map).bindPopup("Billy");
+var marker = L.marker([41.94091, -87.64342]).addTo(map).bindPopup("Bob");
+var marker = L.marker([41.94911, -87.66197]).addTo(map).bindPopup("Sarah");
+var marker = L.marker([41.94286, -87.66339]).addTo(map).bindPopup("Joe");
+var marker = L.marker([41.94103, -87.6551]).addTo(map).bindPopup("Karen");
 
 var polygon = L.polygon([
 	[41.92979, -87.64354], 
 	[41.94091, -87.64342],
-	[41.94091, -87.64342],
+	[41.94286, -87.66339],
 	],{
 	color:'green', 
 	fillColor:'red',
@@ -75,17 +79,13 @@ var polygon = L.polygon([
 
 var line = L.polyline([
 	[41.92979, -87.64354],
-	[41.94103, -87.6551]
+	[41.94103, -87.6662]
 	]
 	).addTo(map)
 
  </script>
 
-<!-- Introduction to webmap, will make seperate DIV for Embedded Map -->
 
-<div class="webmapintro">
-	<p> Below is the Leaflet Map created by Tony Canepa for Homework 4 which identifies where people live in Chicago. </p>
-</div>
 
 </body>
 
