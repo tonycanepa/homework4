@@ -1,7 +1,7 @@
 body {background-color: coral;
 }
 
-#introduction { text-align: center;
+.intro{ text-align: center;
 background-color: white;
 height: : 300px;
 width:500px;
@@ -11,9 +11,13 @@ font: Verdana
 font-size: 14pt;
  }
 
-#mapid { height: 180px; }
+#map {
+	width: 800px;
+	height: 600px;
+	margin: auto;
+}
 
- #webmapintro {
+.webmapintro {
 background-color: white;
 height: : 300px;
 width:500px;

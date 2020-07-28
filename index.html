@@ -3,9 +3,12 @@
 
 <head>
 
-<title>UPP 465 - Tony Canepa - WebPage</title>
+<title>UPP 465 - Tony Canepa - Assignment 4 WebPage</title>
 <link rel="stylesheet" href="tonycanepastyle.css">
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+
+<!-- Leaflet Links -->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
 
@@ -16,7 +19,7 @@
 
    <!-- leaflet basemap layers -->
 
-    <script src="js/leaflet-providers.js"></script>
+ <script src="js/leaflet-providers.js"></script>
 
 </head>
 
@@ -24,34 +27,40 @@
 
 <!-- Basic Introduction to website -->
 
-<div id= "introduction">
-<h1>Grocery Store Locations in Chicago Neighborhoods and Number of Households</h1>
-<p>This map was created to help identify which neighborhoods are in need for more grocery stores to fulfill the needs of the households that live there. Further analysis will be done to identify the population densities of each neighborhood, as well as an audit of the grocery store data to ensure up to date information</p>
+<div class="intro">
+<h1>These are places that my friends live</h1>
+<p>This map was created to help a friend looking for apartments in the city know where our friends are located.</p>
 </div>
 
- <div id="mapid">
+ <div id="map">
  </div>
+
+ <!--below is where I will be adding leaflet map -->
+
 
  <script>
 
  	//intializing map
 
- 	var myMap = L.map('mapid').setView([41.881,-87.623],11)
+ 	var map = L.map('map').setView([41.881,-87.623],10);
 
  	//basemap layer
 
- 	var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
-	maxZoom: 18,
-	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-});.addTo(mapid);
+var Stamen_TonerLite = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+}).addTo(map);
 
 //features
 
-var marker = L.marker([41.92979, -87.64354]).addTo(mapid)
-var marker = L.marker([41.94091, -87.64342]).addTo(mapid)
-var marker = L.marker([41.94911, -87.66197]).addTo(mapid)
-var marker = L.marker([41.94286, -87.66339]).addTo(mapid)
-var marker = L.marker([41.94103, -87.6551]).addTo(mapid)
+var marker = L.marker([41.92979, -87.64354]).addTo(map)
+var marker = L.marker([41.94091, -87.64342]).addTo(map)
+var marker = L.marker([41.94911, -87.66197]).addTo(map)
+var marker = L.marker([41.94286, -87.66339]).addTo(map)
+var marker = L.marker([41.94103, -87.6551]).addTo(map)
 
 var polygon = L.polygon([
 	[41.92979, -87.64354], 
@@ -62,20 +71,20 @@ var polygon = L.polygon([
 	fillColor:'red',
 	fillOpacity: .10,
 }
-).addTo(mapid);
+).addTo(map);
 
 var line = L.polyline([
 	[41.92979, -87.64354],
 	[41.94103, -87.6551]
 	]
-	).addTo(mapid)
+	).addTo(map)
 
  </script>
 
 <!-- Introduction to webmap, will make seperate DIV for Embedded Map -->
 
-<div id="webmapintro">
-	<p> Below is the ESRI WebMap created by Tony Canepa for Homework 1 which identifies grocery store locations throughout Chicago, as well as number of households in each neighborhood. </p>
+<div class="webmapintro">
+	<p> Below is the Leaflet Map created by Tony Canepa for Homework 4 which identifies where people live in Chicago. </p>
 </div>
 
 </body>
